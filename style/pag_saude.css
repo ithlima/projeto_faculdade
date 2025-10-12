@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    min-height: 100vh;
+    background-image: url("../img/ft_fundo.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {   
+  display: none;
+}
+
+.titulo_saude {
+    display: flex;
+    background: rgba(48, 160, 72, 0.733);
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 2rem;
+    padding: 15px;
+    color: white;
+    border-radius: 0px 0px 70px 0px;
+}
+
+.menus_saude {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.menus_saude select {
+    width: 80%;
+    height: 45px;
+    padding-left: 1rem;
+    box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+    border: 0;
+    border-radius: 10px;
+    background-color: rgba(48, 160, 72, 0.733);
+    color: #FFF;
+    transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#formConsulta{
+      max-width: 400px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.lb-con{
+      display: block;
+      margin-top: 10px;
+      font-weight: 500;
+}
+
+.form-saude {
+  max-width: 400px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-saude input,
+.form-saude select,
+.form-saude button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-saude button {
+  background-color: #0080ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.form-saude button:hover {
+  background-color: #005ecb;
+}

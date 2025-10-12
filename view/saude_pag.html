@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style/pag_saude.css">
+  <title>Saúde</title>
+</head>
+
+<body>
+  <div class="titulo_saude">Saúde</div>
+
+  <div class="menus_saude">
+    <select name="guia-saude" id="guia_saude" onchange="mostrarDiv()">
+      <option value="">Selecione . . .</option>
+      <option value="1">Marcar consulta</option>
+      <option value="2">Retirada de medicamentos</option>
+      <option value="3">Marcar exames</option>
+      <option value="4">Tele-consultas</option>
+    </select>
+  </div>
+
+  <div id="esc1" style="display:none; margin-top:10px;">
+
+    <form id="formConsulta" class="form-saude">
+      <label class="lb-con">Nome completo:</label>
+      <input type="text" placeholder="Digite seu nome" required>
+
+      <label class="lb-con">Especialidade:</label>
+      <select required>
+        <option value="">Selecione</option>
+        <option>Clínico Geral</option>
+        <option>Pediatria</option>
+        <option>Cardiologia</option>
+        <option>Ginecologia</option>
+        <option>Dermatologia</option>
+      </select>
+
+      <label class="lb-con">Data:</label>
+      <input type="date" required>
+
+      <label class="lb-con">Hora:</label>
+      <input type="time" required>
+
+      <label class="lb-con">Telefone para contato:</label>
+      <input type="tel" placeholder="(xx) xxxxx-xxxx" required>
+
+      <button type="submit">Agendar Consulta</button>
+    </form>
+
+
+
+
+  </div>
+
+  <div id="esc2" style="display:none; margin-top:10px;">
+
+    <form id="formMedicamentos" class="form-saude">
+  <label class="lb-con">Nome completo:</label>
+  <input type="text" placeholder="Digite seu nome" required>
+
+  <label class="lb-con">Medicamento a retirar:</label>
+  <input type="text" placeholder="Ex: Losartana, Amoxicilina..." required>
+
+  <label class="lb-con">Quantidade:</label>
+  <input type="number" min="1" required>
+
+  <label class="lb-con">Data para retirada:</label>
+  <input type="date" required>
+
+  <label class="lb-con">Telefone para contato:</label>
+  <input type="tel" placeholder="(xx) xxxxx-xxxx" required>
+
+  <button type="submit">Agendar Retirada</button>
+</form>
+
+  </div>
+
+  <div id="esc3" style="display:none; margin-top:10px;">
+
+    <form id="formExames" class="form-saude">
+  <label class="lb-con">Nome completo:</label>
+  <input type="text" placeholder="Digite seu nome" required>
+
+  <label class="lb-con">Tipo de exame:</label>
+  <select required>
+    <option value="">Selecione</option>
+    <option>Exame de Sangue</option>
+    <option>Raio-X</option>
+    <option>Ultrassonografia</option>
+    <option>Eletrocardiograma</option>
+    <option>Outros</option>
+  </select>
+
+  <label class="lb-con">Data desejada:</label>
+  <input type="date" required>
+
+  <label class="lb-con">Horário preferencial:</label>
+  <input type="time">
+
+  <label class="lb-con">Telefone para contato:</label>
+  <input type="tel" placeholder="(xx) xxxxx-xxxx" required>
+
+  <button type="submit">Agendar Exame</button>
+</form>
+
+
+  </div>
+
+  <div id="esc4" style="display:none; margin-top:10px;">
+
+    <form id="formTeleconsulta" class="form-saude">
+  <label class="lb-con">Nome completo:</label>
+  <input type="text" placeholder="Digite seu nome" required>
+
+  <label class="lb-con">Especialidade desejada:</label>
+  <select required>
+    <option value="">Selecione</option>
+    <option>Clínico Geral</option>
+    <option>Psicologia</option>
+    <option>Nutrição</option>
+    <option>Fisioterapia</option>
+    <option>Outros</option>
+  </select>
+
+  <label class="lb-con">Data desejada:</label>
+  <input type="date" required>
+
+  <label class="lb-con">Horário:</label>
+  <input type="time" required>
+
+  <label class="lb-con">Contato (WhatsApp ou e-mail):</label>
+  <input type="text" placeholder="Ex: (xx) xxxxx-xxxx ou seuemail@exemplo.com" required>
+
+  <button type="submit">Agendar Teleconsulta</button>
+</form>
+
+
+  </div>
+  <script src="../script/select_saude.js"></script>
+  <script src="../script/validacao_saude.js"></script>
+</body>
+
+</html>
