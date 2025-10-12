@@ -1,14 +1,24 @@
 function mostrarDiv() {
-    const valor = document.getElementById("guia_saude").value
+  const valor = document.getElementById("guia_saude").value;
 
-    for (let i = 1; i <= 4; i++) {
-        document.getElementById("esc" + i).style.display = "none";
-    }
+  for (let i = 1; i <= 4; i++) {
+    const div = document.getElementById("esc" + i);
+    div.style.display = "none";
+    div.classList.remove("show"); 
+  }
 
-    if (valor) {
-        document.getElementById("esc" + valor).style.display = "block";
-    }
+  if (valor) {
+    const divSelecionada = document.getElementById("esc" + valor);
+    divSelecionada.style.display = "block";
+
+   
+    setTimeout(() => {
+      divSelecionada.classList.add("show");
+    }, 10); 
+  }
 }
+
+
 function resposta_consulta() {
   alert("Consulta registrada! Em breve entraremos em contato pelo WhatsApp para confirmar os detalhes do seu atendimento.");
 }
