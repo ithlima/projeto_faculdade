@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segurança</title>
+  <link rel="stylesheet" href="../style/pag_seguranca.css">
+</head>
+
+<body>
+  <div class="titulo_seguranca">Segurança</div>
+
+  <div class="container">
+    <div class="botoes">
+      <a href="tel:190" class="btn">🚓 Polícia Militar - 190</a>
+      <a href="tel:193" class="btn">🚒 Bombeiros - 193</a>
+      <a href="tel:192" class="btn">🚑 SAMU - 192</a>
+      <a href="tel:199" class="btn">🏢 Defesa Civil - 199</a>
+    </div>
+
+    <div class="observacao">
+      <h3>Deixe uma observação sobre o atendimento:</h3>
+      <textarea id="feedback" placeholder="Ex: Não gostei de como fui atendido pelo SAMU..."></textarea>
+      <button id="enviar">Enviar</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("enviar").addEventListener("click", () => {
+      const texto = document.getElementById("feedback").value.trim();
+      if (texto === "") {
+        alert("Por favor, escreva uma observação antes de enviar.");
+        return;
+      }
+      alert("Observação enviada com sucesso! ✅");
+      document.getElementById("feedback").value = "";
+    });
+  </script>
+</body>
+
+</html>
