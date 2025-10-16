@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saneamento Básico</title>
+  <link rel="stylesheet" href="../style/pag_san.css">
+</head>
+
+<body>
+  <div class="titulo_saneamento">Saneamento Básico</div>
+
+  <div class="container">
+    <p class="descricao">
+      Utilize este canal para enviar suas demandas à Secretaria de Meio Ambiente.<br>
+      Você pode relatar situações como <b>falta de água, esgoto a céu aberto, queimadas, lixo acumulado</b> ou outras questões ambientais.
+    </p>
+
+    <form id="form_saneamento" enctype="multipart/form-data">
+      <label for="nome">Seu nome (opcional):</label>
+      <input type="text" id="nome" name="nome" placeholder="Ex: João da Silva">
+
+      <label for="descricao">Descreva o problema:</label>
+      <textarea id="descricao" name="descricao" required placeholder="Ex: Há um esgoto a céu aberto na Rua das Flores..."></textarea>
+
+      <label for="midia">Envie fotos ou vídeos (opcional):</label>
+      <input type="file" id="midia" name="midia" accept="image/*,video/*" multiple>
+
+      <button type="submit">Enviar demanda</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("form_saneamento").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Sua demanda foi enviada com sucesso! ✅\nA Secretaria de Meio Ambiente analisará sua solicitação.");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
