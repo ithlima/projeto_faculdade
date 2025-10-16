@@ -21,6 +21,17 @@ body::-webkit-scrollbar {   /* Chrome, Edge e Safari */
   display: none;
 }
 
+.titulo{
+     display: flex;
+  justify-content: center;
+  background: rgba(48, 151, 160, 0.73);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 2rem;
+  padding: 15px;
+  color: white;
+  border-radius: 0px 0px 70px 0px;
+}
 .container {
     display: flex;
     flex-direction: row;
