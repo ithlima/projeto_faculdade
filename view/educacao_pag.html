@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educação</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background-image: url("../img/ft_fundo.webp");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      overflow-x: hidden;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    .titulo_educacao {
+      display: flex;
+      background: rgba(48, 160, 72, 0.733);
+      justify-content: center;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 2rem;
+      padding: 15px;
+      color: white;
+      border-radius: 0px 0px 70px 0px;
+    }
+
+    .menus_educacao {
+      margin-top: 10%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .menus_educacao select {
+      width: 80%;
+      height: 45px;
+      padding-left: 1rem;
+      box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+      border: 0;
+      border-radius: 10px;
+      background-color: rgba(48, 160, 72, 0.733);
+      color: #FFF;
+      transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    .form-educacao {
+      max-width: 600px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-educacao input,
+    .form-educacao select,
+    .form-educacao textarea,
+    .form-educacao button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .form-educacao button {
+      background-color: #0080ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .form-educacao button:hover {
+      background-color: #005ecb;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .form-educacao label {
+      font-weight: 500;
+      margin-top: 10px;
+      display: block;
+    }
+
+    .form-educacao textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="titulo_educacao">Educação</div>
+
+  <div class="menus_educacao">
+    <select name="guia-educacao" id="guia_educacao" onchange="mostrarDiv()">
+      <option value="">Selecione . . .</option>
+      <option value="1">Comunicação pais-professor</option>
+      <option value="2">Presença dos alunos</option>
+      <option value="3">Diário on-line</option>
+      <option value="4">Notas</option>
+      <option value="5">Trabalhos de casa</option>
+      <option value="6">Aulas on-line</option>
+      <option value="7">E-book</option>
+      <option value="8">Calendário escolar digital</option>
+      <option value="9">Chat com os professores</option>
+    </select>
+  </div>
+
+  <!-- Conteúdo dos 9 temas -->
+  <div id="esc1" class="fade-in" style="display:none; margin-top:10px;">
+    <form id="formComunicacao" class="form-educacao">
+      <label>Nome do aluno:</label>
+      <input type="text" placeholder="Digite o nome do aluno" required>
+      <label>Nome do responsável:</label>
+      <input type="text" placeholder="Digite seu nome" required>
+      <label>Mensagem para o professor:</label>
+      <textarea placeholder="Digite sua mensagem" required></textarea>
+      <button type="submit">Enviar Mensagem</button>
+    </form>
+  </div>
+
+  <div id="esc2" class="fade-in" style="display:none; margin-top:10px;">
+    <form id="formPresenca" class="form-educacao">
+      <label>Nome do aluno:</label>
+      <input type="text" placeholder="Digite o nome do aluno" required>
+      <label>Data:</label>
+      <input type="date" required>
+      <label>Presença:</label>
+      <select required>
+        <option value="">Selecione</option>
+        <option>Presente</option>
+        <option>Faltou</option>
+        <option>Atrasado</option>
+      </select>
+      <button type="submit">Registrar Presença</button>
+    </form>
+  </div>
+
+  <div id="esc3" class="fade-in" style="display:none; margin-top:10px;">
+    <form id="formDiario" class="form-educacao">
+      <label>Data:</label>
+      <input type="date" required>
+      <label>Atividades do dia:</label>
+      <textarea placeholder="Descreva as atividades realizadas" required></textarea>
+      <button type="submit">Registrar Diário</button>
+    </form>
+  </div>
+
+  <div id="esc4" class="fade-in" style="display:none; margin-top:10px;">
+    <form id="formNotas" class="form-educacao">
+      <label>Nome do aluno:</label>
+      <input type="text" placeholder="Digite o nome do aluno" required>
+      <label>Disciplina:</label>
+      <input type="text" placeholder="Ex: Matemática, História" required>
+      <label>Nota:</label>
+      <input type="number" min="0" max="10" step="0.1" required>
+      <button type="submit">Registrar Nota</button>
+    </form>
+  </div>
+
+  <div id="esc5" class="fade-in" style="display:none; margin-top:10px;">
+    <form id="formTrabalhos" class="form-educacao">
+      <label>Nome do aluno:</label>
+      <input type="text" placeholder="Digite o nome do aluno" required>
+      <label>Trabalho:</label>
+      <input type="text" placeholder="Ex: Exercícios de Matemática" required>
+      <label>Data de entrega:</label>
+      <input type="date" required>
+      <button type="submit">Registrar Trabalho</button>
+    </form>
+  </div>
+
+  <div id="esc6" class="fade-in" style="display:none; margin-top:10px;">
+    <form id="formAulas" class="form-educacao">
+      <label>Nome do aluno:</label>
+      <input type="text" placeholder="Digite o nome do aluno" required>
+      <label>Disciplina:</label>
+      <input type="text" placeholder="Ex: Física, Biologia" required>
+      <label>Link da aula:</label>
+      <input type="url" placeholder="Cole o link da aula online" required>
+      <button type="submit">Registrar Aula</button>
+    </form>
+  </div>
+
+  <div id="esc7" class="fade-in" style="display:none; margin-top:10px;">
+    <form id="formEbook" class="form-educacao">
+      <label>Aluno:</label>
+      <input type="text" placeholder="Digite o nome do aluno" required>
+      <label>E-book desejado:</label>
+      <input type="text" placeholder="Ex: Matemática 9º ano" required>
+      <button type="submit">Solicitar E-book</button>
+    </form>
+  </div>
+
+  <div id="esc8" class="fade-in" style="display:none; margin-top:10px;">
+    <form id="formCalendario" class="form-educacao">
+      <label>Evento:</label>
+      <input type="text" placeholder="Ex: Reunião de pais" required>
+      <label>Data do evento:</label>
+      <input type="date" required>
+      <label>Descrição:</label>
+      <textarea placeholder="Descrição do evento" required></textarea>
+      <button type="submit">Adicionar Evento</button>
+    </form>
+  </div>
+
+  <div id="esc9" class="fade-in" style="display:none; margin-top:10px;">
+    <form id="formChat" class="form-educacao">
+      <label>Aluno:</label>
+      <input type="text" placeholder="Digite seu nome" required>
+      <label>Professor:</label>
+      <input type="text" placeholder="Nome do professor" required>
+      <label>Mensagem:</label>
+      <textarea placeholder="Digite sua mensagem" required></textarea>
+      <button type="submit">Enviar Mensagem</button>
+    </form>
+  </div>
+
+  <script>
+    // Função para mostrar a div correspondente
+    function mostrarDiv() {
+      const valor = document.getElementById("guia_educacao").value;
+
+      for (let i = 1; i <= 9; i++) {
+        const div = document.getElementById("esc" + i);
+        div.style.display = "none";
+        div.classList.remove("show");
+      }
+
+      if (valor) {
+        const divSelecionada = document.getElementById("esc" + valor);
+        divSelecionada.style.display = "block";
+        requestAnimationFrame(() => divSelecionada.classList.add("show"));
+      }
+    }
+
+    // Função genérica de validação
+    function validarFormulario(formId, mensagemSucesso) {
+      const form = document.getElementById(formId);
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const campos = form.querySelectorAll("input, select, textarea");
+        let tudoPreenchido = true;
+
+        campos.forEach(campo => {
+          if (campo.hasAttribute("required") && !campo.value.trim()) {
+            tudoPreenchido = false;
+          }
+        });
+
+        if (!tudoPreenchido) {
+          alert("Por favor, preencha todos os campos antes de confirmar.");
+        } else {
+          alert(mensagemSucesso);
+          form.reset();
+        }
+      });
+    }
+
+    // Aplicando validação nos 9 formulários
+    validarFormulario("formComunicacao", "Mensagem enviada para o professor com sucesso!");
+    validarFormulario("formPresenca", "Presença registrada com sucesso!");
+    validarFormulario("formDiario", "Diário online registrado com sucesso!");
+    validarFormulario("formNotas", "Nota registrada com sucesso!");
+    validarFormulario("formTrabalhos", "Trabalho de casa registrado com sucesso!");
+    validarFormulario("formAulas", "Aula online registrada com sucesso!");
+    validarFormulario("formEbook", "E-book solicitado com sucesso!");
+    validarFormulario("formCalendario", "Evento adicionado ao calendário escolar!");
+    validarFormulario("formChat", "Mensagem enviada para o professor com sucesso!");
+  </script>
+</body>
+
+</html>
